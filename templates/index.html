@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Max's Mission to Mars</h1>
+      <p>Below is information about the red planet</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+    <h2>Image of the Day</h2>
+    <img src="{{vacation.featured_image_url}}" alt="Featured Mars Image">
+
+    </div>
+      <div class="col-md-6">
+    
+    <h2>Mars News</h2>
+    <h3>{{vacation.news_title}}</h3>
+    <h4>{{vacation.news_p}}</h4>
+
+    </div>
+<div class="col-md-6">
+    <h2>Planetary Facts</h2>
+    <table> {{vacation.spacefacts_clean | safe }} </table>
+    </div>
+</div>
+
+
+    <h2>Weather</h2>
+    <h3>{{vacation.mars_weather}}</h3>
+   
+
+    
+    <div class="row">
+      <div class="col-md-6">
+    <img src="{{vacation.hemisphere_image_urls[0].Link}}" style="width:400px;height:400px;border:0;">
+            <h3>{{vacation.hemisphere_image_urls[0]['title']}}</h3>
+      </div>
+      <div class="col-md-6">
+
+    <img src="{{vacation.hemisphere_image_urls[1].Link}}" style="width:400px;height:400px;border:0;">
+            <h3>{{vacation.hemisphere_image_urls[1]['title']}}</h3>
+      </div>
+
+    <div class="row">
+      <div class="col-md-6">
+
+    <img src="{{vacation.hemisphere_image_urls[2].Link}}" style="width:400px;height:400px;border:0;">
+            <h3>{{vacation.hemisphere_image_urls[2]['title']}}</h3>
+      </div>
+      <div class="col-md-6">
+    
+    <img src="{{vacation.hemisphere_image_urls[3].Link}}" style="width:400px;height:400px;border:0;">
+            <h3>{{vacation.hemisphere_image_urls[3]['title']}}</h3>
+
+            </div>
+
+  </div>
+  </div>
+</body>
+
+</html>
